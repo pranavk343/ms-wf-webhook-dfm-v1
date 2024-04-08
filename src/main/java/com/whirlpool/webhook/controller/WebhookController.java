@@ -4,10 +4,11 @@ import com.whirlpool.webhook.dto.WebhookRequestDto;
 import com.whirlpool.webhook.dto.WebhookResponseDto;
 import org.owasp.encoder.Encode;
 import org.slf4j.*;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
 
 @RestController
 public class WebhookController {
@@ -20,4 +21,12 @@ public class WebhookController {
 //        ResponseEntity<String> response = null;
 //        return new ResponseEntity<>(Encode.forCDATA("Body"), response.getHeaders(), response.getStatusCode());
 //    }
+
+    @PostMapping(value = "/WF/webHookNotification")
+    public ResponseEntity<String> getNotification(@RequestBody WebhookRequestDto request) throws IOException
+    {
+
+        System.out.println("request="+ request.toString());
+        return new ResponseEntity<>("Success", HttpStatus.OK);
+    }
 }
