@@ -1,2 +1,6 @@
 
-]	java:S125"<This block of commented-out lines of code should be removed.(ê…¥ôüÿÿÿÿ8òûÓéë1
+…
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄŞ8ë­¼‘ì1J$20777e1d-5401-41aa-a402-c95384c08e18
+¯
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ÂÆİ8Áñà‘ì1J$208230f6-d27c-4b41-80ec-8421281ad522
+r	java:S106"+Replace this use of System.out by a logger.(Æ³°¥ıÿÿÿÿ8÷­¼‘ì1J$8fd6de15-2eda-4cd2-ab14-74f2df5c1ad7

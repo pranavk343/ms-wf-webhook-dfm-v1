@@ -18,7 +18,9 @@ public class SAPConfigLoader {
         properties= loadProperties();
     }
 
-    public static String getRfcDestination(){ return properties.getProperty(SAP_RFC_DESTINATION);}
+    public static String getRfcDestination(){
+        return properties.getProperty(SAP_RFC_DESTINATION);
+    }
 
     private static Properties loadProperties(){
         try {

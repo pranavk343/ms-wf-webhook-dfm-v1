@@ -8,8 +8,8 @@ public class WebhookRequestDto {
     private String additional_data_available;
     private String create_datetime;
 
-    NotificationEventDto eventDto;
-    NotificationDataDto dataDto;
-    NotificationLinksDto[] linksDto = null;
+    NotificationEventDto event;
+    NotificationDataDto data;
+    NotificationLinksDto links[];
 
 }
