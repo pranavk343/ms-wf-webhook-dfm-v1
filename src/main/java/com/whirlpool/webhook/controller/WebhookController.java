@@ -23,6 +23,7 @@ public class WebhookController {
     {
 
         System.out.println("request="+ request.toString());
+        webhookService.callNotificationFunction(request);
         return new ResponseEntity<>("Success", HttpStatus.OK);
     }
 }

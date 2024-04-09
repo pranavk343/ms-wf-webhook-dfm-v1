@@ -4,6 +4,7 @@ import com.sap.conn.jco.JCoDestination;
 import com.sap.conn.jco.JCoFunction;
 import com.whirlpool.webhook.common.Helper;
 import com.whirlpool.webhook.dto.WebhookRequestDto;
+import com.whirlpool.webhook.dto.WebhookResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -16,13 +17,16 @@ public class WebhookService {
 
     public String callNotificationFunction(WebhookRequestDto request)
     {
+        WebhookResponseDto webhookResponseDto = new WebhookResponseDto();
         try
         {
+            System.out.println("getRfcDestination()="+getRfcDestination());
             JCoDestination destination = helper.getJCoDestination(getRfcDestination());
             JCoFunction function = destination.getRepository().getFunction("Z_NSD_WELLS_WEBHOOK_NTFCN");
             populateImportParameterList(request, function);
             function.execute(destination);
-
+            webhookResponseDto.setResult(function.getExportParameterList().getString("status"));
+            System.out.println("Status:"+function.getExportParameterList().getString("status"));
         }
         catch( Exception e)
         {

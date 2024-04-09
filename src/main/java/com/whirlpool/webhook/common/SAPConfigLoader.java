@@ -18,12 +18,14 @@ public class SAPConfigLoader {
         properties= loadProperties();
     }
 
-    public static String getRfcDestination(){
+    public static String getRfcDestination()
+    {
         return properties.getProperty(SAP_RFC_DESTINATION);
     }
 
     private static Properties loadProperties(){
         try {
+            System.out.println("CONFIG_FILE="+CONFIG_FILE);
             return PropertiesLoader.loadProperties(System.getenv(CONFIG_FILE));
         }catch (UtilityException e){
             logger.error(e.getMessage());

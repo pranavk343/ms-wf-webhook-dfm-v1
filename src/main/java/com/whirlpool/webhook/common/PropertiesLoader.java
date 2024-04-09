@@ -10,7 +10,9 @@ import java.util.Properties;
 @UtilityClass
 public class PropertiesLoader {
     public static Properties loadProperties(String configFile) throws UtilityException {
+
       Properties configuration = new Properties();
+      System.out.println("config file="+configFile);
       try (FileInputStream fileInputStream = new FileInputStream(configFile)){
           configuration.load(fileInputStream);
       }catch (IOException e){

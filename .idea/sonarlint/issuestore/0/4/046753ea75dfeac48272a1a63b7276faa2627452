@@ -1,6 +1,6 @@
 
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8ë­¼‘ì1J$20777e1d-5401-41aa-a402-c95384c08e18
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8òÝ±’ì1J$80781226-8840-40e3-8e13-449802e9401c
 ¯
-java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ÂÆÝž8Áñà‘ì1J$208230f6-d27c-4b41-80ec-8421281ad522
-r	java:S106"+Replace this use of System.out by a logger.(Æ³°¥ýÿÿÿÿ8÷­¼‘ì1J$8fd6de15-2eda-4cd2-ab14-74f2df5c1ad7
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ÂÆÝž8÷Ý±’ì1J$3ce791ed-2ba1-434a-80b6-9208e48a99bc
+r	java:S106"+Replace this use of System.out by a logger.(Æ³°¥ýÿÿÿÿ8ùÝ±’ì1J$65783d47-462c-4251-bdfb-aae81400ee44
