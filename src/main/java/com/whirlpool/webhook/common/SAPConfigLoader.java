@@ -25,7 +25,7 @@ public class SAPConfigLoader {
 
     private static Properties loadProperties(){
         try {
-            System.out.println("CONFIG_FILE="+CONFIG_FILE);
+            //System.out.println("CONFIG_FILE="+CONFIG_FILE);
             return PropertiesLoader.loadProperties(System.getenv(CONFIG_FILE));
         }catch (UtilityException e){
             logger.error(e.getMessage());

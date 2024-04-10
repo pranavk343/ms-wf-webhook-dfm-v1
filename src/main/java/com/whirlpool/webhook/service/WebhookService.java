@@ -5,32 +5,30 @@ import com.sap.conn.jco.JCoFunction;
 import com.whirlpool.webhook.common.Helper;
 import com.whirlpool.webhook.dto.WebhookRequestDto;
 import com.whirlpool.webhook.dto.WebhookResponseDto;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import static com.whirlpool.webhook.common.SAPConfigLoader.getRfcDestination;
 @Component
 public class WebhookService {
 
-    Logger logger = LoggerFactory.getLogger(WebhookService.class);
-
     @Autowired
     private Helper helper;
 
-    public String callNotificationFunction(WebhookRequestDto request)
+    public WebhookResponseDto callNotificationFunction(WebhookRequestDto request)
     {
         WebhookResponseDto webhookResponseDto = new WebhookResponseDto();
         try
         {
-            logger.info("getRfcDestination()="+getRfcDestination());
+            System.out.println("getRfcDestination()="+getRfcDestination());
             JCoDestination destination = helper.getJCoDestination(getRfcDestination());
             JCoFunction function = destination.getRepository().getFunction("Z_NSD_WELLS_WEBHOOK_NTFCN");
             populateImportParameterList(request, function);
             function.execute(destination);
             webhookResponseDto.setResult(function.getExportParameterList().getString("STATUS"));
-            logger.info("Output  --> "+function.getExportParameterList().getString("STATUS"));
+            System.out.println("Status:"+function.getExportParameterList().getString("STATUS"));
         }
         catch( Exception e)
         {
@@ -39,7 +37,7 @@ public class WebhookService {
         finally {
 
         }
-        return "";
+        return webhookResponseDto;
     }
     private static void populateImportParameterList(WebhookRequestDto input, JCoFunction function)
     {
