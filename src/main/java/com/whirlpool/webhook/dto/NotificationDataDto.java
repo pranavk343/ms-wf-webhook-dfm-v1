@@ -1,5 +1,8 @@
 package com.whirlpool.webhook.dto;
 
+import lombok.Data;
+
+@Data
 public class NotificationDataDto {
 
     private String cpu_id;

@@ -89,7 +89,7 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
-              <mainClass>com.whirlpool.webhook.WebHookApplication</mainClass>
+              <mainClass>com.whirlpool.WebHookApplication</mainClass>
             </manifest>
           </archive>
         </configuration>

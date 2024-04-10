@@ -1,23 +1,29 @@
 package com.whirlpool.webhook.controller;
 
 import com.whirlpool.webhook.dto.WebhookRequestDto;
-import com.whirlpool.webhook.dto.WebhookResponseDto;
-import org.owasp.encoder.Encode;
+import com.whirlpool.webhook.service.WebhookService;
 import org.slf4j.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
 
 @RestController
 public class WebhookController {
     Logger logger = LoggerFactory.getLogger(WebhookController.class);
 
-    WebhookRequestDto requestDto = null;
+    @Autowired
+    private WebhookService webhookService;
 
-//    @RequestMapping(value = "/WF/Webhook/Notification/", method = RequestMethod.POST)
-//    public ResponseEntity<WebhookResponseDto> sendNotifcation(){
-//        ResponseEntity<String> response = null;
-//        return new ResponseEntity<>(Encode.forCDATA("Body"), response.getHeaders(), response.getStatusCode());
-//    }
+
+    @PostMapping(value = "/WF/webHookNotification")
+    public ResponseEntity<String> getNotification(@RequestBody WebhookRequestDto request) throws IOException
+    {
+
+        System.out.println("request="+ request.toString());
+        webhookService.callNotificationFunction(request);
+        return new ResponseEntity<>("Success", HttpStatus.OK);
+    }
 }
