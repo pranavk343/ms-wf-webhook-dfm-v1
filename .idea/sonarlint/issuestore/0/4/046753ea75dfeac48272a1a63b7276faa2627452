@@ -1,6 +1,10 @@
 
+›
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(î”Ú8ºã¿¼ì1J$3f83a105-b929-4b60-9b18-2e5e96cbd2d8
+¡
+java:S2293!"YReplace the type specification in this constructor call with the diamond operator ("<>").(ŸŽãñùÿÿÿÿ8»ã¿¼ì1J$3bfdd2e6-cead-4ffc-8fba-41819d85c554
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8òÝ±’ì1J$80781226-8840-40e3-8e13-449802e9401c
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8Íã¿¼ì1J$f9ef950f-b251-4b99-9eac-4e6ec8a7e943
 ¯
-java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ÂÆÝž8÷Ý±’ì1J$3ce791ed-2ba1-434a-80b6-9208e48a99bc
-r	java:S106"+Replace this use of System.out by a logger.(Æ³°¥ýÿÿÿÿ8ùÝ±’ì1J$65783d47-462c-4251-bdfb-aae81400ee44
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ÂÆÝž8Ôã¿¼ì1J$3f9f927a-951b-42b9-80ca-02a7ff9f7b17
+r	java:S106"+Replace this use of System.out by a logger.(Æ³°¥ýÿÿÿÿ8Öã¿¼ì1J$7420f8d6-d18e-47b0-8728-44e1c71e446e

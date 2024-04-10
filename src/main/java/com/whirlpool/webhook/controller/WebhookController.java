@@ -1,6 +1,7 @@
 package com.whirlpool.webhook.controller;
 
 import com.whirlpool.webhook.dto.WebhookRequestDto;
+import com.whirlpool.webhook.dto.WebhookResponseDto;
 import com.whirlpool.webhook.service.WebhookService;
 import org.slf4j.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,14 @@ public class WebhookController {
     public ResponseEntity<String> getNotification(@RequestBody WebhookRequestDto request) throws IOException
     {
 
+
         System.out.println("request="+ request.toString());
-        webhookService.callNotificationFunction(request);
-        return new ResponseEntity<>("Success", HttpStatus.OK);
+        WebhookResponseDto responseEntity =webhookService.callNotificationFunction(request);
+
+        if(responseEntity.getResult().equals("Success")) {
+            return new ResponseEntity<String>(responseEntity.getResult(), HttpStatus.OK);
+        }else {
+            return new ResponseEntity<String>(responseEntity.getResult(), HttpStatus.BAD_REQUEST);
+        }
     }
 }
