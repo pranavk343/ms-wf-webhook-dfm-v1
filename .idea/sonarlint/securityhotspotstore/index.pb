@@ -29,3 +29,10 @@ S
 #.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 p
 @src/main/java/com/whirlpool/webhook/common/PropertiesLoader.java,f\f\ff4f3cc82566120d5e10c300c2d365bb6f1b07e6
+c
+3src/main/java/com/whirlpool/WebHookApplication.java,1\2\120fac316caf3b6d26152ab881c6199718192fa3
+=
+lombok.config,8\2\823fe80d2650ec87c2614800da17ca3a55af96a9
+:
+
+Dockerfile,6\6\6651ddff6eb82c840ced7c1dddee15c6e1913dd4
