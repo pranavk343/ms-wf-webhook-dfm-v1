@@ -23,7 +23,6 @@ public class WebhookController {
     public ResponseEntity<String> getNotification(@RequestBody WebhookRequestDto request, @RequestHeader("payload_signature") String payload_signature) throws IOException
     {
         WebhookResponseDto responseEntity =webhookService.callNotificationFunction(request);
-
         if(responseEntity.getResult().equals("Success")) {
             return new ResponseEntity<String>(responseEntity.getResult(), HttpStatus.OK);
         }else {

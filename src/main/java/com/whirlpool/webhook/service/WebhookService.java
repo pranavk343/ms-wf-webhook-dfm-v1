@@ -6,8 +6,6 @@ import com.whirlpool.webhook.common.Helper;
 import com.whirlpool.webhook.dto.WebhookRequestDto;
 import com.whirlpool.webhook.dto.WebhookResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import static com.whirlpool.webhook.common.SAPConfigLoader.getRfcDestination;
@@ -22,20 +20,15 @@ public class WebhookService {
         WebhookResponseDto webhookResponseDto = new WebhookResponseDto();
         try
         {
-            System.out.println("getRfcDestination()="+getRfcDestination());
             JCoDestination destination = helper.getJCoDestination(getRfcDestination());
             JCoFunction function = destination.getRepository().getFunction("Z_NSD_WELLS_WEBHOOK_NTFCN");
             populateImportParameterList(request, function);
             function.execute(destination);
             webhookResponseDto.setResult(function.getExportParameterList().getString("STATUS"));
-            System.out.println("Status:"+function.getExportParameterList().getString("STATUS"));
         }
         catch( Exception e)
         {
             e.printStackTrace();
-        }
-        finally {
-
         }
         return webhookResponseDto;
     }
@@ -55,4 +48,5 @@ public class WebhookService {
         function.getImportParameterList().setValue("SALES_ORDER_NUMBER", input.getData().getSales_order_number());
         function.getImportParameterList().setValue("APPROVAL_DATETIME", input.getData().getApproval_datetime());
     }
+
 }
