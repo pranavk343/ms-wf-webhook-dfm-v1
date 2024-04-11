@@ -22,7 +22,6 @@ public class WebhookController {
     @PostMapping(value = "/WF/webHookNotification")
     public ResponseEntity<String> getNotification(@RequestBody WebhookRequestDto request, @RequestHeader("payload_signature") String payload_signature) throws IOException
     {
-
         WebhookResponseDto responseEntity =webhookService.callNotificationFunction(request);
 
         if(responseEntity.getResult().equals("Success")) {
