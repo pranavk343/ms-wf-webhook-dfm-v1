@@ -22,11 +22,7 @@ public class WebhookController {
     @PostMapping(value = "/WF/webHookNotification")
     public ResponseEntity<String> getNotification(@RequestBody WebhookRequestDto request) throws IOException
     {
-
-
-        System.out.println("request="+ request.toString());
         WebhookResponseDto responseEntity =webhookService.callNotificationFunction(request);
-
         if(responseEntity.getResult().equals("Success")) {
             return new ResponseEntity<String>(responseEntity.getResult(), HttpStatus.OK);
         }else {
