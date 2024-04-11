@@ -1,9 +1,0 @@
-
-u
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(î”Ú8ãÐŽÁì1
-{
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ŸŽãñùÿÿÿÿ8ãÐŽÁì1
-…
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8Íã¿¼ì1J$d59ce5a9-8e45-4307-8e65-5c3b6666f421
-¯
-java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ÂÆÝž8Ôã¿¼ì1J$0c819920-f66e-4864-8047-40d723cf2a80
