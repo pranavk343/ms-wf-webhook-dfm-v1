@@ -1,10 +1,12 @@
 
 ›
-java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(î”Ú8ºã¿¼ì1J$3f83a105-b929-4b60-9b18-2e5e96cbd2d8
+java:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(î”Ú8ºã¿¼ì1J$e2152b3b-b549-4d62-a057-fbac2f0b844d
 ¡
-java:S2293!"YReplace the type specification in this constructor call with the diamond operator ("<>").(ŸŽãñùÿÿÿÿ8»ã¿¼ì1J$3bfdd2e6-cead-4ffc-8fba-41819d85c554
+java:S2293 "YReplace the type specification in this constructor call with the diamond operator ("<>").(ŸŽãñùÿÿÿÿ8»ã¿¼ì1J$3dcc8027-ef3a-4f71-b58b-a6e2364198d5
+“	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(”œ‡î8›€÷æì1J$72f4cd83-56eb-4934-9670-8920a05ef9b8
 …
-java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8Íã¿¼ì1J$f9ef950f-b251-4b99-9eac-4e6ec8a7e943
-¯
-java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ÂÆÝž8Ôã¿¼ì1J$3f9f927a-951b-42b9-80ca-02a7ff9f7b17
-r	java:S106"+Replace this use of System.out by a logger.(Æ³°¥ýÿÿÿÿ8Öã¿¼ì1J$7420f8d6-d18e-47b0-8728-44e1c71e446e
+java:S6813"BRemove this field injection and use constructor injection instead.(êæÄÞ8Íã¿¼ì1J$e0b3c729-d50f-493e-8dfc-3c82b37c79e8
+‰
+java:S1130"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(”œ‡î8±Ü‚çì1
+r	java:S106"+Replace this use of System.out by a logger.(Æ³°¥ýÿÿÿÿ8Öã¿¼ì1J$3b43d6e8-a0f8-4139-beed-5778aef95cee
+m	java:S106"+Replace this use of System.out by a logger.(–™Ïß8Ç€÷æì1J$e095a72b-5302-497c-a381-c335d41fabe3
