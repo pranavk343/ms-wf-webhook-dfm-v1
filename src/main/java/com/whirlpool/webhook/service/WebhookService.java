@@ -21,10 +21,14 @@ public class WebhookService {
         try
         {
             JCoDestination destination = helper.getJCoDestination(getRfcDestination());
-            JCoFunction function = destination.getRepository().getFunction("Z_NSD_WELLS_WEBHOOK_NTFCN");
+            JCoFunction function = destination.getRepository().getFunction("Z_NSD_WELLS_ORDER_RELEASE_API");
             populateImportParameterList(request, function);
             function.execute(destination);
-            webhookResponseDto.setResult(function.getExportParameterList().getString("STATUS"));
+            webhookResponseDto.setResult(function.getExportParameterList().getString("STATUS_CODE"));
+            webhookResponseDto.setResultMessage(function.getExportParameterList().getString("STATUS_MESSAGE"));
+
+            System.out.println("Ststus code --> "+ function.getExportParameterList().getString("STATUS_CODE"));
+            System.out.println("Ststus msg --> "+ function.getExportParameterList().getString("STATUS_MESSAGE"));
         }
         catch( Exception e)
         {

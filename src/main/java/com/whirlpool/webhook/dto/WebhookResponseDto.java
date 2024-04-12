@@ -5,4 +5,5 @@ import lombok.Data;
 @Data
 public class WebhookResponseDto {
     private String result ="";
+    private String resultMessage="";
 }
