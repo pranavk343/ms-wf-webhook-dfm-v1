@@ -20,13 +20,15 @@ public class WebhookController {
 
 
     @PostMapping(value = "/WF/webHookNotification")
-    public ResponseEntity<String> getNotification(@RequestBody WebhookRequestDto request, @RequestHeader("payload_signature") String payload_signature) throws IOException
+    public ResponseEntity<WebhookResponseDto> getNotification(@RequestBody WebhookRequestDto request) throws IOException
     {
+
         WebhookResponseDto responseEntity =webhookService.callNotificationFunction(request);
-        if(responseEntity.getResult().equals("Success")) {
-            return new ResponseEntity<String>(responseEntity.getResult(), HttpStatus.OK);
+
+        if(responseEntity.getStatus_message().contains("Connection Error")) {
+            return new ResponseEntity<WebhookResponseDto>(responseEntity, HttpStatus.BAD_REQUEST);
         }else {
-            return new ResponseEntity<String>(responseEntity.getResult(), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<WebhookResponseDto>(responseEntity, HttpStatus.OK);
         }
     }
 }

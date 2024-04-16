@@ -21,13 +21,17 @@ public class WebhookService {
         try
         {
             JCoDestination destination = helper.getJCoDestination(getRfcDestination());
-            JCoFunction function = destination.getRepository().getFunction("Z_NSD_WELLS_WEBHOOK_NTFCN");
+            JCoFunction function = destination.getRepository().getFunction("Z_NSD_WELLS_ORDER_RELEASE_API");
             populateImportParameterList(request, function);
             function.execute(destination);
-            webhookResponseDto.setResult(function.getExportParameterList().getString("STATUS"));
+            webhookResponseDto.setStatus_code(function.getExportParameterList().getString("STATUS_CODE"));
+            webhookResponseDto.setStatus_message(function.getExportParameterList().getString("STATUS_MESSAGE"));
         }
         catch( Exception e)
         {
+            webhookResponseDto.setStatus_message("Connection Error "+
+                    e.getMessage());
+
             e.printStackTrace();
         }
         return webhookResponseDto;
